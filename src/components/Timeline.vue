@@ -1,10 +1,10 @@
 <template>
   <el-timeline>
-    <el-timeline-item timestamp="2018/4/12" placement="top"  color="#0bbd87">
+    <el-timeline-item timestamp="2016/9" placement="top"  color="rgb(215,23,34)">
       <div class="TagGroup">
         <div class="TagCard">
           <div class="TagCard-img-container">
-            <img src="../assets/logo.png" style="transform: scale(0.6)" alt=""/>
+            <img src="../assets/kangjie.jpg" style="transform: scale(0.6);top: -20px" alt=""/>
           </div>
           <div class="Text">
             <h1>康杰中学</h1>
@@ -13,11 +13,11 @@
         </div>
       </div>
     </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
+    <el-timeline-item timestamp="2019/9" placement="top" color="rgb(0,90,169)">
       <div class="TagGroup">
         <div class="TagCard">
           <div class="TagCard-img-container">
-            <img src="../assets/logo.png" style="transform: scale(0.6)" alt=""/>
+            <img src="../assets/tongji.jpg" style="transform: scale(0.6)" alt=""/>
           </div>
           <div class="Text">
             <h1>同济大学</h1>
@@ -26,11 +26,11 @@
         </div>
       </div>
     </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
+    <el-timeline-item timestamp="2019/10" placement="top" color="rgb(185,3,0)">
       <div class="TagGroup">
         <div class="TagCard">
           <div class="TagCard-img-container">
-            <img src="../assets/logo.png" style="transform: scale(0.6)" alt=""/>
+            <img src="../assets/zijue.jpg" style="transform: scale(0.7)" alt=""/>
           </div>
           <div class="Text">
             <h1>同济大学学生会</h1>
@@ -39,24 +39,24 @@
         </div>
       </div>
     </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
+    <el-timeline-item timestamp="2020/10" placement="top" color="rgb(21,201,66)">
       <div class="TagGroup">
         <div class="TagCard">
           <div class="TagCard-img-container">
-            <img src="../assets/logo.png" style="transform: scale(0.6)" alt=""/>
+            <img src="../assets/Google.jpg" style="transform: scale(0.6)" alt=""/>
           </div>
           <div class="Text">
             <h1>同济大学谷歌俱乐部</h1>
-            <p></p>
+            <p>Don't be evil</p>
           </div>
         </div>
       </div>
     </el-timeline-item>
-    <el-timeline-item timestamp="2018/4/12" placement="top">
+    <el-timeline-item timestamp="2022/4" placement="top" color="rgb(23,169,177)">
       <div class="TagGroup">
         <div class="TagCard">
           <div class="TagCard-img-container">
-            <img src="../assets/logo.png" style="transform: scale(0.6)" alt=""/>
+            <img src="../assets/modi.jpg" style="transform: scale(0.8)" alt=""/>
           </div>
           <div class="Text">
             <h1>MoDI Lab</h1>

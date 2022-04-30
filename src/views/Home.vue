@@ -1,6 +1,6 @@
 <template>
-  <!--首页顶部-->
-  <div class="header" id="">
+<!-- 首页顶部-->
+  <div class="header" id="top">
 <!--    <div class="icon">-->
       <a href="https://github.com/DukeofCambridge">
         <img src="../assets/github.png" style="transform:scale(0.1);position:absolute;top: -160px;right: -35px;display: flex;" alt="github"/>
@@ -11,10 +11,6 @@
       <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkwMzIyMTE2NQ==&scene=124#wechat_redirect">
         <img src="../assets/wechat_BTN.png" style="transform:scale(1.1);position:absolute;top: 32px;right: 45px;display: flex;" alt=""/>
       </a>
-<!--      <a href="https://github.com/DukeofCambridge">-->
-<!--        <img src="../assets/github.png" style="transform:scale(0.1);" alt=""/>-->
-<!--      </a>-->
-<!--    </div>-->
 
     <div class="blank">
       <div style="margin-top: 0; width: 40%;  text-align: center">
@@ -35,8 +31,10 @@
     </svg>
   </div>
 
+<!-- 侧边导航-->
   <Sidemenu style="position: fixed;right:0; top:35%;z-index: 100; border-radius: 20px"></Sidemenu>
 
+<!-- 主体内容 -->
   <div style="margin: 0 50vh;">
     <div class="title" id="footprint">
       <label class="linear-gradient-text" > 足 迹 </label><br/><br/>
@@ -53,35 +51,31 @@
     <Carousel></Carousel>
   </div>
 
-  <div style="margin: 10vh 30vh;">
+  <div style="margin: 10vh 25vh;">
     <div class="title" id="writing">
       <label class="linear-gradient-text" > 墨 痕  </label><br/><br/>
-      <label class="desc" > 肉体崩毁，思想永存</label>
+      <label class="desc" > 信息熵即为灵魂</label>
     </div>
-    <Carousel></Carousel>
+    <el-row>
+      <el-col
+          v-for="(o, index) in 6"
+          :key="o"
+          :span="6"
+          :offset="index %3 !==0 ? 1 : 2">
+        <el-card shadow="hover" :body-style="{ padding: '0px' }"  style="margin-bottom: 5vh;" @click="this.$router.push('/blog/'+index)">
+          <img
+              src="../assets/logo.png"
+              class="image"
+          />
+          <div style="padding-bottom: 14px; text-align: center">
+            <h3>博文{{index+1}}</h3>
+
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
-<!--  <div style="margin: 30px 20vh">-->
 
-<!--    <el-row >-->
-<!--      <el-col-->
-<!--          v-for="(o, index) in 8"-->
-<!--          :key="o"-->
-<!--          :span="5"-->
-<!--          :offset="index %4 !==0 ? 1 : 0">-->
-<!--        <el-card :body-style="{ padding: '0px' }">-->
-<!--          <img-->
-<!--              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"-->
-<!--              class="image"-->
-<!--          />-->
-<!--          <div style="padding: 14px; text-align: center">-->
-<!--            <span>Yummy hamburger</span>-->
-
-<!--          </div>-->
-<!--        </el-card>-->
-<!--      </el-col>-->
-<!--    </el-row>-->
-
-<!--  </div>-->
 </template>
 
 <script>
