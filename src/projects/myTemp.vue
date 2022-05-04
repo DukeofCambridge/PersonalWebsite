@@ -58,12 +58,11 @@
     </div>
     <el-row>
       <el-col
-          v-for="(item,index) in blogContent"
+          v-for="item in blogContent"
           :key="item"
           :span="6"
-          :offset="index %3 !==0 ? 1 : 2"
-          >
-        <el-card shadow="hover" :body-style="{ padding: '0px' }"  style="margin-bottom: 5vh;" @click="this.$router.push(item.turnRoute)">
+          :offset="index %3 !==0 ? 1 : 2">
+        <el-card shadow="hover" :body-style="{ padding: '0px' }"  style="margin-bottom: 5vh;" @click="this.$router.push('/blog/'+index)">
           <img
               :src="item.picPath"
               class="image"
@@ -91,10 +90,9 @@ export default {
       ns: 1,
 
       blogContent:[
-          {picPath: require("../assets/logo.png"), text:"白项", turnRoute:"/blog"},
-          {picPath: require("../assets/DeviceLog.png"), text:"医学影像处理", turnRoute:"/projects/FetalLung"},
-          {picPath: require("../assets/FetalLung.png"), text:"设备日志识别", turnRoute:"/projects/FetalLung"},
-
+          {picPath: require("../assets/logo.png"), text:"白项", pushRoute: require()},
+          {picPath: require("../assets/DeviceLog.png"), text:"医学影像处理"},
+          {picPath: require("../assets/FetalLung.png"), text:"设备日志识别"},
       ],
 
     }
