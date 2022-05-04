@@ -91,7 +91,7 @@ export default {
       ns: 1,
 
       blogContent:[
-          {picPath: require("../assets/logo.png"), text:"白项", turnRoute:"/blog"},
+          {picPath: require("../assets/logo.png"), text:"全栈开发", turnRoute:"/blog"},
           {picPath: require("../assets/DeviceLog.png"), text:"医学影像处理", turnRoute:"/projects/FetalLung"},
           {picPath: require("../assets/FetalLung.png"), text:"设备日志识别", turnRoute:"/projects/FetalLung"},
 

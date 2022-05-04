@@ -1,5 +1,6 @@
 <template>
-    <div class="project-header">
+  <el-button type="primary" style="margin: 15vh auto auto 10vh;position: fixed" @click="this.$router.push('/')">返    回</el-button>
+  <div class="project-header">
         <el-container>
             <!-- <el-affix> -->
                 <el-header class="pageHeader">
@@ -8,7 +9,7 @@
                 </el-header>
             <!-- </el-affix> -->
             <el-main>
-                
+
                 <!-- 调整间距 -->
                 <div style="margin-top:6%;"></div>
 
@@ -20,7 +21,7 @@
 
                 <div style="background:;" class="pHContent">
                     <div style="margin-top:14%;width:83%;display:flex;">
-                        <ul class="pHText">                           
+                        <ul class="pHText">
                             <li>
                                 与<label style="font-weight:bold;">上海第一妇婴保健院</label>专业医生合作。
                             </li>
@@ -46,7 +47,7 @@
                 </el-divider>
 
                 <div>
-                    <img src="../assets/Projects/FetalLung/AllProcess.png" alt="总流程" style="width:39%;"/> 
+                    <img src="../assets/Projects/FetalLung/AllProcess.png" alt="总流程" style="width:39%;"/>
                 </div>
 
                 <!-- 调整间距 -->
@@ -70,7 +71,7 @@
                             <el-collapse-item title="I. 特征提取" name="1" >
                                 <!-- <div style="font-size:15px;text-align:left;">与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div> -->
                                 <div style="margin-left:10%;">
-                                    <ul class="pCollapseText">                           
+                                    <ul class="pCollapseText">
                                         <li>
                                             专业医生提供ROI子宫图像，以及相关文本特征和标签。
                                         </li>
@@ -88,7 +89,7 @@
 
                             <el-collapse-item title="II. 数据不均衡处理" name="2">
                                 <div style="margin-left:10%;">
-                                    <ul class="pCollapseText">                           
+                                    <ul class="pCollapseText">
                                         <li>
                                             140个样本中，标签0和标签1样本的比例不均衡。
                                         </li>
@@ -106,7 +107,7 @@
 
                             <el-collapse-item title="III. 分类模型构建" name="3">
                                 <div style="margin-left:10%;">
-                                    <ul class="pCollapseText">                           
+                                    <ul class="pCollapseText">
                                         <li>
                                             特征选择：OMP算法、五折交叉验证。
                                         </li>
@@ -124,7 +125,7 @@
 
                             <el-collapse-item title="IV. 结果评估" name="4">
                                 <div style="margin-left:10%;">
-                                    <ul class="pCollapseText">                           
+                                    <ul class="pCollapseText">
                                         <li>
                                             使用9个不同指标对模型结果进行评价。
                                         </li>
@@ -142,16 +143,16 @@
                         </el-collapse>
                     </el-col>
                 </el-row>
-                
+
 
                 <!-- 调整间距 -->
-                <div style="margin-top:3%;"></div>
-                
-                <el-divider>
-                    <div>
-                        <el-button type="info" style="size:mini;" @click="this.$router.push('/')">返回个人页面</el-button>
-                    </div>
-                </el-divider>
+<!--                <div style="margin-top:3%;"></div>-->
+
+<!--                <el-divider>-->
+<!--                    <div>-->
+<!--                        <el-button type="info" style="size:mini;" @click="this.$router.push('/')">返回个人页面</el-button>-->
+<!--                    </div>-->
+<!--                </el-divider>-->
 
                 <!-- <div style="margin-top:6%;"></div>
 
@@ -162,7 +163,7 @@
 
                     v-for="(item) in 4"
                     :key="item"
-                    
+
                     >
                         <div>
                             <el-card class="box-card">
@@ -174,7 +175,7 @@
                                 <div v-for="o in 4" :key="o" class="text item">{{ 'List item ' + o }}</div>
                             </el-card>
                         </div>
-                        
+
                         <div style="margin-top:3%;"></div>
 
                     </el-col>
@@ -253,8 +254,8 @@ export default {
 }
 
 blockquote{
-    font-style: italic; 
-    font-size: 23px; 
+    font-style: italic;
+    font-size: 23px;
     font-weight: 300;
     line-height: 1;
     opacity: 0.9;
