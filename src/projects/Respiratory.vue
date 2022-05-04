@@ -2,15 +2,8 @@
   
   <div class="project-header">
         <el-container>
-            <!-- <el-affix> -->
-                
-                <!-- <el-header class="pageHeader">
-                    <img src="../assets/Projects/Head_1.png" alt="创造" class="imgHead"/>
-                    <blockquote style="margin-top:-3.9%;">"人生是一个永不停息的工厂，那里没有懒人的位置。工作吧！创造吧！" —— 罗曼罗兰</blockquote>
-                    
-                </el-header> -->
-                <ProjectHeader></ProjectHeader>
-            <!-- </el-affix> -->
+            <ProjectHeader></ProjectHeader>
+
             <el-main>
                 
                 <el-button type="warning" @click="this.$router.push('/')" class="buttonHead">返    回</el-button>
@@ -28,19 +21,19 @@
                     <div style="margin-top:14%;width:83%;display:flex;">
                         <ul class="pHText">
                             <li>
-                                与<label style="font-weight:bold;">上海第一妇婴保健院</label>专业医生合作。
+                                根据病人<label style="font-weight:bold;">呼吸声录音</label>对其身体情况进行分类。
                             </li>
                             <li>
-                                帮助判断妇女是否患有<label style="font-weight:bold;">子宫腺肌症</label>。
+                                相关数据集和原始算法来自<label style="font-weight:bold;">Kaggle</label>平台。
                             </li>
                             <li>
-                                <label style="font-weight:bold;">主要流程</label>：特征提取→数据不平衡处理→分类模型构建→结果评估
+                                <label style="font-weight:bold;">主要流程</label>：特征提取→语音降噪→分类模型构建→结果评估
                             </li>
                         </ul>
                     </div>
 
                     <div style="margin-top:-37%;margin-left:84%;width:80%;background-color:;">
-                        <img src="../assets/FetalLung.png" alt="医学影像处理"  />
+                        <img src="../assets/Respiratory.png" alt="医学影像处理"  />
                     </div>
                 </div>
 
@@ -52,7 +45,7 @@
                 </el-divider>
 
                 <div>
-                    <img src="../assets/Projects/FetalLung/AllProcess.png" alt="总流程" style="width:39%;"/>
+                    <img src="../assets/Projects/Respiratory/AllProcess.png" alt="总流程" style="width:39%;"/>
                 </div>
 
                 <!-- 调整间距 -->
@@ -78,35 +71,32 @@
                                 <div style="margin-left:10%;">
                                     <ul class="pCollapseText">
                                         <li>
-                                            专业医生提供ROI子宫图像，以及相关文本特征和标签。
+                                            对Kaggle除音频之外的特征数据进行整理，并完成数据清洗。
                                         </li>
                                         <li>
-                                            提取Pyradiomics医学影像组学特征和Wavelet小波特征。
+                                            针对不同时长的音频进行分帧对齐处理。
                                         </li>
                                         <li>
-                                            共有140有效样本。特征由影像组学、小波和文本特征组成。
+                                            根据信号处理流程，分别提取MFCC和FBank特征。
                                         </li>
                                     </ul>
 
-                                    <img src="../assets/Projects/FetalLung/step1.png" style="width:12%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
+                                    <img src="../assets/Projects/Respiratory/step1.png" style="width:28%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
                                 </div>
                             </el-collapse-item>
 
-                            <el-collapse-item title="II. 数据不均衡处理" name="2">
+                            <el-collapse-item title="II. 语音降噪" name="2">
                                 <div style="margin-left:10%;">
                                     <ul class="pCollapseText">
                                         <li>
-                                            140个样本中，标签0和标签1样本的比例不均衡。
+                                            针对论文中提到的噪声问题，先进性预先筛选出合适的音频。
                                         </li>
                                         <li>
-                                            使用过采样算法BorderlineSMOTE进行不均衡处理。
-                                        </li>
-                                        <li>
-                                            不均衡处理后，共有样本245个，标签0：110；标签1：135。
+                                            通过谱减法在信号处理过程中进行降噪。
                                         </li>
                                     </ul>
 
-                                    <img src="../assets/Projects/FetalLung/step2.png" style="width:15%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
+                                    <img src="../assets/Projects/Respiratory/step2.png" style="width:18.2%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
                                 </div>
                             </el-collapse-item>
 
@@ -114,17 +104,17 @@
                                 <div style="margin-left:10%;">
                                     <ul class="pCollapseText">
                                         <li>
-                                            特征选择：OMP算法、五折交叉验证。
+                                            针对语音识别特点，选择HMM提取音素。
                                         </li>
                                         <li>
-                                            特征对比：图像特征和文本特征。
+                                            将MFCC特征用于传统机器学习分类器SVM,，LDA，。
                                         </li>
                                         <li>
-                                            传统机器学习模型：逻辑回归、支持向量机。
+                                            将FBank特征用于深度学习LSTM，双向LSTM等神经网络。
                                         </li>
                                     </ul>
 
-                                    <img src="../assets/Projects/FetalLung/step3.png" style="width:18%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
+                                    <img src="../assets/Projects/Respiratory/step3.png" style="width:23%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
                                 </div>
                             </el-collapse-item>
 
@@ -132,17 +122,14 @@
                                 <div style="margin-left:10%;">
                                     <ul class="pCollapseText">
                                         <li>
-                                            使用9个不同指标对模型结果进行评价。
+                                            使用主流分类指标对模型结果进行评价。
                                         </li>
                                         <li>
-                                            基于五折交叉验证后的结果进行假设验证。
-                                        </li>
-                                        <li>
-                                            对模型结果进行可解释性分析并可视化，辅助专业医生使用。
+                                            和Kaggle原始算法进行对比（效果更优）。
                                         </li>
                                     </ul>
 
-                                    <img src="../assets/Projects/FetalLung/step4.png" style="width:12%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
+                                    <img src="../assets/Projects/Respiratory/step4.png" style="width:27%;margin-left:45%;margin-top:-20%;" alt="特征提取"/>
                                 </div>
                             </el-collapse-item>
                         </el-collapse>
@@ -196,7 +183,7 @@
 import ProjectHeader from "@/components/ProjectHeader.vue"
 
 export default {
-    name: "FetalLung",
+    name: "Respiratory",
     components:{ProjectHeader},
     data() {
       return {
