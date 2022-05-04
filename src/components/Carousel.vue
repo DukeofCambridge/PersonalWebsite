@@ -1,7 +1,7 @@
 <template>
-  <el-carousel :interval="4000" type="card" height="400px">
-    <el-carousel-item v-for="item in 6" :key="item">
-<!--      <img :src=item.src style="width: 100%; "  alt=""/>-->
+  <el-carousel :interval="2000" type="card" height="400px">
+    <el-carousel-item v-for="item in 4" :key="item">
+     <img :src=items[item-1].src style="width: 100%; "  alt=""/>
       <h3>{{ item }}</h3>
     </el-carousel-item>
   </el-carousel>
@@ -15,9 +15,20 @@ export default {
       items:[
         {
           src: require("../assets/cpc-volunteer.jpg"),
-
           desc: '抗疫志愿者'
-        }
+        },
+        {
+          src: require("../assets/dch_sunny.jpg"),
+          desc: '在阳光下'
+        },
+        {
+          src: require("../assets/London.png"),
+          desc: '伦敦'
+        },
+        {
+          src: require("../assets/Florence.png"),
+          desc: '佛罗伦萨'
+        },
       ]
     }
   }

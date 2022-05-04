@@ -1,5 +1,5 @@
 <template>
-  <el-button type="primary" style="margin: 0 auto auto 10vh;position: fixed" @click="this.$router.push('/')">返    回</el-button>
+  <el-button type="primary" class="buttonHead" @click="this.$router.push('/')">返    回</el-button>
   <div class="articles-area">
     <el-card style="text-align: left;width: 990px;margin: 35px auto 0 auto">
       <div>
@@ -115,4 +115,12 @@ export default {
 
 <style scoped>
 @import "../assets/markdown.css";
+.buttonHead{
+    /* background-color:black; */
+    margin-left:93%;
+    margin-top:-0.2%;
+    position:fixed;
+    z-index:25;
+    /* position:relative; */
+}
 </style>
