@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import Blog from "@/views/Blog.vue";
 import FetalLung from "@/projects/FetalLung.vue"
 import Respiratory from "@/projects/Respiratory.vue"
+import Reminder from "@/views/Reminder";
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     name: 'Respiratory',
     component: Respiratory
   },
+  {
+    path: '/reminder',
+    name: 'Reminder',
+    component: Reminder
+  }
 ]
 
 const router = createRouter({
