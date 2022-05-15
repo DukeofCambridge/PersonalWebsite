@@ -79,7 +79,9 @@
           <el-date-picker
               v-model="create.startTime"
               type="datetime"
-              value-format="yyyy-MM-dd HH:mm:ss"
+              placeholder="选择开始时间"
+              format="YYYY/MM/DD hh:mm:ss"
+              value-format="YYYY-MM-DD hh:mm"
               align="right">
           </el-date-picker>
         </el-form-item>
@@ -87,8 +89,9 @@
           <el-date-picker
               v-model="create.endTime"
               type="datetime"
-              placeholder="选择日期时间"
-              value-format="yyyy-MM-dd HH:mm:ss"
+              placeholder="选择截止时间"
+              format="YYYY/MM/DD hh:mm:ss"
+              value-format="YYYY-MM-DD hh:mm"
               align="right"
               :picker-options="pickerOptions">
           </el-date-picker>
@@ -195,16 +198,16 @@ export default {
         },
       },
       options: [{
-        value: 0,
+        value: '',
         label: '学习'
       }, {
-        value: 1,
+        value: 'warning',
         label: '社交'
       },{
-        value: 2,
+        value: 'success',
         label: '娱乐'
       },{
-        value: 3,
+        value: 'danger',
         label: '其他'
       }],
     }
@@ -250,6 +253,8 @@ export default {
     },
     add(){
       this.calendarData.push(this.create)
+      this.dialogFormVisible=false
+      console.log(this.create)
     }
   }
 }
