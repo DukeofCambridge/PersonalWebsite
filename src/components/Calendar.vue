@@ -18,8 +18,9 @@
             <div :key="event.title" v-for="event in contentmy(data.day).slice(0,3)" style="margin:2px">
               <!--点击删除事件 -->
               <div @click="clear(event.id)">
-                <el-button type="text" style="margin-right: 3px"> {{event.startTime.split(' ')[1]}}</el-button>
-                <el-tag :type="event.type" >{{event.title}}</el-tag>
+                <el-button type="text" style="margin-right: 3px;" disabled> {{event.startTime.split(' ')[1]}}</el-button>
+                <el-tag :type="event.type" style="margin-right: 11px;">{{event.title}}</el-tag>
+                <el-tag :type="event.priority_type" style="size:mini" effect="dark">{{event.priority}}</el-tag>
               </div>
             </div>
             <!--若超过三个，增加一个详细信息按钮 -->
@@ -80,8 +81,8 @@
               v-model="create.startTime"
               type="datetime"
               placeholder="选择开始时间"
-              format="YYYY/MM/DD hh:mm:ss"
-              value-format="YYYY-MM-DD hh:mm"
+              format="YYYY/MM/DD HH:mm:ss"
+              value-format="YYYY-MM-DD HH:mm"
               align="right">
           </el-date-picker>
         </el-form-item>
@@ -90,8 +91,8 @@
               v-model="create.endTime"
               type="datetime"
               placeholder="选择截止时间"
-              format="YYYY/MM/DD hh:mm:ss"
-              value-format="YYYY-MM-DD hh:mm"
+              format="YYYY/MM/DD HH:mm:ss"
+              value-format="YYYY-MM-DD HH:mm"
               align="right"
               :picker-options="pickerOptions">
           </el-date-picker>
@@ -139,6 +140,7 @@ export default {
         startTime: "",
         endTime: "",
         priority: 0,
+        priority_type:"",
         type: '',
         desc: ''
       },
@@ -150,6 +152,7 @@ export default {
           startTime: "2022-05-13 20:00",
           endTime: "2022-05-13 24:00",
           priority: 2,
+          priority_type:"success",
           type: 'success',
           desc: '星辰与深渊都将为你所撼动'
         },
@@ -159,6 +162,7 @@ export default {
           startTime: "2022-05-14 08:00",
           endTime: "2022-05-14 11:00",
           priority: 1,
+          priority_type:"primary",
           type: '',
           desc: '事件描述'
         },
@@ -168,6 +172,7 @@ export default {
           startTime: "2022-05-14 08:00",
           endTime: "2022-05-14 11:00",
           priority: 1,
+          priority_type:"primary",
           type: '',
           desc: '事件描述'
         },
@@ -177,6 +182,7 @@ export default {
           startTime: "2022-05-14 08:00",
           endTime: "2022-05-14 11:00",
           priority: 1,
+          priority_type:"primary",
           type: '',
           desc: '事件描述'
         },
@@ -186,6 +192,7 @@ export default {
           startTime: "2022-05-14 08:00",
           endTime: "2022-05-14 11:00",
           priority: 1,
+          priority_type:"primary",
           type: '',
           desc: '事件描述'
         },
@@ -207,8 +214,24 @@ export default {
         value: 'success',
         label: '娱乐'
       },{
-        value: 'danger',
+        value: 'info',
         label: '其他'
+      }],
+      priority_options: [{
+        value: 1,
+        label: 'primary'
+      }, {
+        value: 2,
+        label: 'success'
+      },{
+        value: 3,
+        label: 'info'
+      },{
+        value: 4,
+        label: 'warning'
+      },{
+        value: 5,
+        label: 'danger'
       }],
     }
   },
@@ -252,6 +275,26 @@ export default {
       })
     },
     add(){
+      switch(this.create.priority){
+        case 1:
+          this.create.priority_type="primary";
+          break;
+        case 2:
+          this.create.priority_type="success";
+          break;
+        case 3:
+          this.create.priority_type="info";
+          break;
+        case 4:
+          this.create.priority_type="warning";
+          break;
+        case 5:
+          this.create.priority_type="danger";
+          break;
+        default :
+          this.create.priority_type="primary";
+          break;
+      }
       this.calendarData.push(this.create)
       this.dialogFormVisible=false
       console.log(this.create)
