@@ -45,9 +45,9 @@
       <el-table-column width="200" prop="startTime" label="开始时间"></el-table-column>
       <el-table-column width="200" prop="endTime" label="截止时间"></el-table-column>
 <!--      <el-table-column width="200" prop="endTime" label="截止时间"></el-table-column>-->
-<!--      <el-table-column width="200" prop="priority" label="截止时间"></el-table-column>-->
+      <el-table-column sortable width="200" prop="priority" label="优先级"></el-table-column>
       <el-table-column width="600" prop="desc" label="描述"></el-table-column>
-      <el-table-column fixed="right">
+      <el-table-column width="140" fixed="right">
         <template #header>
           <el-input v-model="search" size="small" placeholder="点击搜索" />
         </template>
@@ -64,7 +64,6 @@
     </el-table>
     <!--新建事项-->
     <el-dialog
-        :modal="false"
         title="新建事项"
         v-model="dialogFormVisible"
         width="560px">
@@ -73,7 +72,20 @@
           <el-input v-model="create.title" ></el-input>
         </el-form-item>
         <el-form-item  prop="desc" label="说明">
-          <el-input v-model="create.desc" type="textarea" prefix-icon="el-icon-unlock"></el-input>
+          <el-input v-model="create.desc" type="textarea" prefix-icon="el-icon-unlock"></el-input><br/>
+          <el-upload
+              class="upload-demo"
+              action="https://jsonplaceholder.typicode.com/posts/"
+              :on-preview="handlePreview"
+              :on-remove="handleRemove"
+              :before-remove="beforeRemove"
+              multiple
+              :limit="3"
+              :on-exceed="handleExceed"
+              :file-list="fileList"
+          >
+            <el-button type="primary">上传文件</el-button>
+          </el-upload>
         </el-form-item>
         <el-form-item prop="startTime" label="开始时间">
           <el-date-picker
@@ -128,6 +140,12 @@ export default {
   name: "Calendar",
   data() {
     return {
+      fileList:[
+        // {
+        //   name: '简历.pdf',
+        //   url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100',
+        // },
+      ],
       sliderMax: 5,
       dialogFormVisible: false,
       timeview: true, //日历视图

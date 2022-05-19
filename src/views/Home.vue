@@ -132,7 +132,7 @@ export default {
 .WaveMultiGroup {
   position: relative;
   width: 100%;
-  height: 15vh;
+  height: 85vh;
   margin-bottom: -7px;
   min-height: 100px;
   max-height: 150px;
