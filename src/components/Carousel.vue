@@ -26,11 +26,11 @@ export default {
           desc: '美赛'
         },
         {
-          src: require("../assets/互联网.png"),
+          src: require("../assets/internet.png"),
           desc: '互联网+'
         },
         {
-          src: require("../assets/奖学金.png"),
+          src: require("../assets/reward.png"),
           desc: '奖学金'
         },
         {
