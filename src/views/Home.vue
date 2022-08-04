@@ -14,7 +14,7 @@
 
     <div class="blank">
       <div style="margin-top: 0; width: 40%;  text-align: center">
-        <h1 style="color: aliceblue; font-size: 40px; font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; margin-bottom: 40px;">邵国诚 | 丁晨航</h1>
+        <h1 style="color: aliceblue; font-size: 40px; font-family: Tahoma, Helvetica, Arial, 宋体, sans-serif; margin-bottom: 40px;">邵国诚</h1>
         <blockquote>“只要不失去你的崇高，整个世界都会向你敞开”</blockquote>
       </div>
     </div>

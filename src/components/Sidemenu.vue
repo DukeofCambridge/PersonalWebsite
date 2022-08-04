@@ -3,22 +3,22 @@
       :default-active=active
       style="width: 110px;opacity: 0.8">
     <el-menu-item index="1" @click="goAnchor('#top')">
-      <i class="el-icon-user"></i>
+      <el-icon><User /></el-icon>
       <span >顶 部</span>
     </el-menu-item>
 
     <el-menu-item index="2" @click="goAnchor('#footprint')">
-      <i class="el-icon-guide"></i>
+      <el-icon><Guide /></el-icon>
       <span >足 迹</span>
     </el-menu-item>
 
     <el-menu-item index="3" @click="goAnchor('#collection')">
-      <i class="el-icon-medal"></i>
+      <el-icon><Medal /></el-icon>
       <span >撷 英</span>
     </el-menu-item>
 
     <el-menu-item index="4" @click="goAnchor('#writing')">
-      <i class="el-icon-notebook-1"></i>
+      <el-icon><Notebook /></el-icon>
       <span >墨 痕</span>
     </el-menu-item>
   </el-menu>
